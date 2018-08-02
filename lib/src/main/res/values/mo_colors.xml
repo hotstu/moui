@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mo_colorPrimary">#3F51B5</color>
+    <color name="mo_colorPrimaryDark">#303F9F</color>
+    <color name="mo_colorAccent">#FF4081</color>
+    <color name="mo_transparent">#00000000</color>
+    <color name="mo_white">#ffffff</color>
+    <color name="mo_75_white">#C0FFFFFF</color>
+    <color name="mo_50_white">#80FFFFFF</color>
+    <color name="mo_25_white">#40FFFFFF</color>
+    <color name="mo_15_white">#26FFFFFF</color>
+    <color name="mo_10_white">#19FFFFFF</color>
+
+    <color name="mo_pure_black">#000000</color>
+    <color name="mo_75_pure_black">#C0000000</color>
+    <color name="mo_60_pure_black">#99000000</color>
+    <color name="mo_50_pure_black">#80000000</color>
+    <color name="mo_25_pure_black">#40000000</color>
+    <color name="mo_15_pure_black">#26000000</color>
+    <color name="mo_10_pure_black">#19000000</color>
+    
+    <color name="mo_separator">#DEE0E2</color>
+    <color name="mo_separator_darken">#D4D6D8</color>
+    <color name="mo_background">#F4F5F7</color>
+    <color name="mo_background_pressed">#EEEFF1</color>
+    <color name="mo_black">#212832</color>
+    <color name="mo_link">#547FB0</color>
+    <color name="mo_pressed">#EEEEF0</color>
+
+    <color name="mo_gray_1">#353C46</color>
+    <color name="mo_gray_2">#49505A</color>
+    <color name="mo_gray_3">#5D646E</color>
+    <color name="mo_gray_4">#717882</color>
+    <color name="mo_gray_5">#858C96</color>
+    <color name="mo_gray_6">#99A0AA</color>
+    <color name="mo_gray_7">#ADB4BE</color>
+    <color name="mo_gray_8">#C4C8D0</color>
+    <color name="mo_gray_9">#D8DCE4</color>
+</resources>

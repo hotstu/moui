@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/mo_colorPrimary</color>
+    <color name="colorPrimaryDark">@color/mo_colorPrimaryDark</color>
+    <color name="colorAccent">@color/mo_colorAccent</color>
+</resources>

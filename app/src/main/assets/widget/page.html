@@ -1,0 +1,37 @@
+<!--
+  ~ Copyright (c) 2018 hglf
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>helloworl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection"content="telephone=no, email=no" />
+</head>
+<body style="background-color: aquamarine">
+
+  <h1>hello,world</h1>
+  <div id="msg"></div>
+  <script>
+    var $ = document.querySelectorAll;
+    $("#msg").forEach(function(item, index) {
+      this.text = index
+    })
+  </script>
+</body>
+</html>

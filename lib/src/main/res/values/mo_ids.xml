@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="mo_toolbar" type="id" />
+    <item name="mo_toolbar_wrapper" type="id" />
+    <item name="mo_dialog_edit_input" type="id"/>
+    <item name="mo_dialog_edit_right_icon" type="id"/>
+    <item name="mo_arch_swipe_layout_in_back" type="id"/>
+    <item name="mo_fragment_activity_contextview_id" type="id"/>
+
+</resources>

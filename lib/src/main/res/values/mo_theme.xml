@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="MoRootTheme" parent="Theme.AppCompat.NoActionBar" />
+
+    <style name="MoBaseTheme" parent="MoRootTheme">
+        <item name="colorPrimary">?attr/mo_colorPrimary</item>
+        <item name="colorPrimaryDark">?attr/mo_colorPrimaryDark</item>
+        <item name="colorAccent">?attr/mo_colorAccent</item>
+    </style>
+
+    <style name="MoTheme" parent="MoBaseTheme">
+        <item name="mo_colorPrimary">@color/mo_colorPrimary</item>
+        <item name="mo_colorPrimaryDark">@color/mo_colorPrimaryDark</item>
+        <item name="mo_colorAccent">@color/mo_colorAccent</item>
+        <!--**********************************************
+        *                mo common color               *
+        **********************************************-->
+        <item name="mo_color_separator">@color/mo_separator</item>
+        <item name="mo_color_separator_darken">@color/mo_separator_darken</item>
+        <item name="mo_color_background">@color/mo_background</item>
+        <item name="mo_color_background_pressed">@color/mo_background_pressed</item>
+        <item name="mo_color_black">@color/mo_black</item>
+        <item name="mo_color_link">@color/mo_link</item>
+        <item name="mo_color_pressed">@color/mo_pressed</item>
+
+        <item name="mo_color_gray_1">@color/mo_gray_1</item>
+        <item name="mo_color_gray_2">@color/mo_gray_2</item>
+        <item name="mo_color_gray_3">@color/mo_gray_3</item>
+        <item name="mo_color_gray_4">@color/mo_gray_4</item>
+        <item name="mo_color_gray_5">@color/mo_gray_5</item>
+        <item name="mo_color_gray_6">@color/mo_gray_6</item>
+        <item name="mo_color_gray_7">@color/mo_gray_7</item>
+        <item name="mo_color_gray_8">@color/mo_gray_8</item>
+        <item name="mo_color_gray_9">@color/mo_gray_9</item>
+
+        <item name="mo_content_spacing_horizontal">@dimen/mo_content_spacing_horizontal</item>
+        <item name="mo_s_checkbox">@drawable/mo_s_checkbox</item>
+        <item name="mo_s_check_mark">@drawable/mo_s_dialog_check_mark</item>
+        <!--**********************************************
+        *                mo dialog                     *
+        **********************************************-->
+        <item name="mo_dialog_margin_horizontal">40dp</item>
+        <item name="mo_dialog_min_width">280dp</item>
+        <item name="mo_dialog_bg">@drawable/mo_dialog_bg</item>
+        <item name="mo_dialog_margin_vertical">20dp</item>
+        <item name="mo_dialog_padding_horizontal">24dp</item>
+        <item name="mo_dialog_background_dim_amount">0.6</item>
+
+        <!-- title -->
+        <item name="mo_dialog_title_text_color">?attr/mo_color_black</item>
+        <item name="mo_dialog_title_margin_top">24dp</item>
+        <item name="mo_dialog_title_text_size">17sp</item>
+
+        <!-- menu -->
+        <item name="mo_dialog_menu_item_check_icon_margin_horizontal">6dp</item>
+
+        <!-- content -->
+        <item name="mo_dialog_content_padding_top">14dp</item>
+        <item name="mo_dialog_content_padding_top_when_no_title">27dp</item>
+        <item name="mo_dialog_content_padding_top_when_list">8dp</item>
+        <item name="mo_dialog_content_padding_bottom">28dp</item>
+        <item name="mo_dialog_content_padding_bottom_when_no_action">8dp</item>
+        <item name="mo_dialog_content_padding_bottom_when_action_block">16dp</item>
+        <item name="mo_dialog_content_message_text_size">16sp</item>
+        <item name="mo_dialog_content_list_item_height">48dp</item>
+        <item name="mo_dialog_content_list_item_text_size">15sp</item>
+        <item name="mo_dialog_content_list_item_bg">?attr/mo_s_list_item_bg_with_border_none</item>
+        <item name="mo_dialog_confirm_content_padding_top">28dp</item>
+        <item name="mo_dialog_confirm_content_padding_bottom">22dp</item>
+        <item name="mo_dialog_edit_content_padding_top">28dp</item>
+        <item name="mo_dialog_edit_content_padding_bottom">31dp</item>
+        <item name="mo_dialog_block_content_text_size">14sp</item>
+        <item name="mo_dialog_menu_item_text_color">?attr/mo_color_black</item>
+
+        <!-- action -->
+        <item name="mo_dialog_action_container_margin_bottom">12dp</item>
+        <item name="mo_dialog_action_container_margin_horizontal">12dp</item>
+        <item name="mo_dialog_action_button_min_width">64dp</item>
+        <item name="mo_dialog_action_button_height">36dp</item>
+        <item name="mo_dialog_action_button_margin_left">8dp</item>
+        <item name="mo_dialog_action_drawable_padding">6dp</item>
+        <item name="mo_dialog_action_button_text_size">14sp</item>
+        <item name="mo_dialog_action_button_padding_horizontal">12dp</item>
+
+        <item name="mo_dialog_action_block_container_margin_bottom">12dp</item>
+        <item name="mo_dialog_action_block_btn_height">36dp</item>
+
+        <item name="mo_dialog_action_text_negative_color">
+            @color/mo_s_dialog_action_text_negative_color
+        </item>
+        <item name="mo_dialog_action_text_color">@color/mo_s_dialog_action_text_color</item>
+        <item name="mo_dialog_action_btn_bg">@drawable/mo_s_dialog_action_btn_bg</item>
+        <item name="mo_dialog_action_block_btn_bg">?attr/mo_s_list_item_bg_with_border_none</item>
+
+        <!-- tip -->
+        <item name="mo_tip_dialog_bg">@drawable/mo_tip_dialog_bg</item>
+        <item name="mo_tip_dialog_min_width">120dp</item>
+        <item name="mo_tip_dialog_min_height">56dp</item>
+        <item name="mo_tip_dialog_margin_horizontal">?attr/mo_content_spacing_horizontal</item>
+        <item name="mo_tip_dialog_padding_vertical">12dp</item>
+        <item name="mo_tip_dialog_padding_horizontal">?attr/mo_content_spacing_horizontal</item>
+        <!--**********************************************
+        *             mo list item bg                  *
+        **********************************************-->
+        <item name="mo_list_item_height">@dimen/mo_list_item_height</item>
+        <item name="mo_list_item_height_higher">@dimen/mo_list_item_height_higher</item>
+
+        <item name="mo_list_item_bg_with_border_bottom">
+            @drawable/mo_list_item_bg_with_border_bottom
+        </item>
+        <item name="mo_list_item_bg_with_border_bottom_pressed">
+            @drawable/mo_list_item_bg_with_border_bottom_pressed
+        </item>
+        <item name="mo_list_item_bg_with_border_bottom_inset_left">
+            @drawable/mo_list_item_bg_with_border_bottom_inset_left
+        </item>
+        <item name="mo_list_item_bg_with_border_bottom_inset_left_pressed">
+            @drawable/mo_list_item_bg_with_border_bottom_inset_left_pressed
+        </item>
+        <item name="mo_list_item_bg_with_border_top">@drawable/mo_list_item_bg_with_border_top
+        </item>
+        <item name="mo_list_item_bg_with_border_top_pressed">
+            @drawable/mo_list_item_bg_with_border_top_pressed
+        </item>
+        <item name="mo_list_item_bg_with_border_top_inset_left">
+            @drawable/mo_list_item_bg_with_border_top_inset_left
+        </item>
+        <item name="mo_list_item_bg_with_border_top_inset_left_pressed">
+            @drawable/mo_list_item_bg_with_border_top_inset_left_pressed
+        </item>
+        <item name="mo_list_item_bg_with_border_double">
+            @drawable/mo_list_item_bg_with_double_border
+        </item>
+        <item name="mo_list_item_bg_with_border_double_pressed">
+            @drawable/mo_list_item_bg_with_double_border_pressed
+        </item>
+
+        <item name="mo_s_list_item_bg_with_border_bottom">
+            @drawable/mo_s_list_item_bg_with_border_bottom
+        </item>
+        <item name="mo_s_list_item_bg_with_border_bottom_inset">
+            @drawable/mo_s_list_item_bg_with_border_bottom_inset
+        </item>
+        <item name="mo_s_list_item_bg_with_border_bottom_inset_left">
+            @drawable/mo_s_list_item_bg_with_border_bottom_inset_left
+        </item>
+        <item name="mo_s_list_item_bg_with_border_top">
+            @drawable/mo_s_list_item_bg_with_border_top
+        </item>
+        <item name="mo_s_list_item_bg_with_border_top_inset_left">
+            @drawable/mo_s_list_item_bg_with_border_top_inset_left
+        </item>
+        <item name="mo_s_list_item_bg_with_border_double">
+            @drawable/mo_s_list_item_bg_with_border_double
+        </item>
+        <item name="mo_s_list_item_bg_with_border_none">
+            @drawable/mo_s_list_item_bg_with_border_none
+        </item>
+    </style>
+</resources>

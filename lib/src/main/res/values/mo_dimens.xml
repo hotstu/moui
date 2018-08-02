@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--**********************************************
+    *           List - List Item                 *
+    **********************************************-->
+    <dimen name="mo_list_item_height">56dp</dimen>
+    <dimen name="mo_list_item_height_higher">103dp</dimen>
+    <dimen name="mo_list_item_inset">16dp</dimen>
+    <dimen name="mo_list_divider_height">1px</dimen>
+    <dimen name="mo_list_divider_height_negative">-1px</dimen>
+
+    <dimen name="mo_content_spacing_horizontal">16dp</dimen> <!-- margin 和 padding 等使用的内容通用水平间距 -->
+    <dimen name="mo_dialog_radius">5dp</dimen> <!-- margin 和 padding 等使用的内容通用水平间距 -->
+    <dimen name="mo_dialog_action_button_radius">2dp</dimen>
+
+</resources>

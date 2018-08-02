@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MOSwipeBackLayout">
+        <item name="shadow_left">@drawable/mo_swipback_shadow_left</item>
+        <item name="shadow_right">@drawable/mo_swipback_shadow_right</item>
+        <item name="shadow_bottom">@drawable/mo_swipback_shadow_bottom</item>
+    </style>
+</resources>

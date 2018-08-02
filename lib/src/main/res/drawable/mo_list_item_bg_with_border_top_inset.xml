@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/mo_white"/>
+    <item
+        android:drawable="@color/mo_separator"
+        android:left="@dimen/mo_list_item_inset"
+        android:right="@dimen/mo_list_item_inset"/>
+    <item
+        android:drawable="@color/mo_white"
+        android:top="@dimen/mo_list_divider_height"/>
+</layer-list>

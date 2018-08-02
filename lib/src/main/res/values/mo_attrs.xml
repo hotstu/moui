@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--**********************************************
+    *                 common color               *
+    **********************************************-->
+    <attr name="mo_colorPrimary" format="color" />
+    <attr name="mo_colorPrimaryDark" format="color" />
+    <attr name="mo_colorAccent" format="color" />
+    <attr name="mo_color_separator" format="color" />
+    <attr name="mo_color_separator_darken" format="color" />
+    <attr name="mo_color_background" format="color" />
+    <attr name="mo_color_background_pressed" format="color" />
+    <attr name="mo_color_black" format="color" />
+    <attr name="mo_color_link" format="color" />
+    <attr name="mo_color_pressed" format="color" />
+    <attr name="mo_color_gray_1" format="color" />
+    <attr name="mo_color_gray_2" format="color" />
+    <attr name="mo_color_gray_3" format="color" />
+    <attr name="mo_color_gray_4" format="color" />
+    <attr name="mo_color_gray_5" format="color" />
+    <attr name="mo_color_gray_6" format="color" />
+    <attr name="mo_color_gray_7" format="color" />
+    <attr name="mo_color_gray_8" format="color" />
+    <attr name="mo_color_gray_9" format="color" />
+
+    <!--**********************************************
+    *                 common dimen               *
+    **********************************************-->
+    <attr name="mo_content_spacing_horizontal" format="dimension" /> <!-- margin 和 padding 等使用的内容通用水平间距 -->
+
+
+    <!--**********************************************
+    *                mo dialog                     *
+    **********************************************-->
+    <attr name="mo_dialog_margin_horizontal" format="dimension" />
+    <attr name="mo_dialog_min_width" format="dimension" />
+    <attr name="mo_dialog_bg" format="reference" />
+    <attr name="mo_dialog_margin_vertical" format="dimension" />
+    <attr name="mo_dialog_padding_horizontal" format="dimension" />
+    <attr name="mo_dialog_background_dim_amount" format="float" />
+
+    <!-- title -->
+    <attr name="mo_dialog_title_text_color" format="color" />
+    <attr name="mo_dialog_title_margin_top" format="dimension" />
+    <attr name="mo_dialog_title_text_size" format="dimension" />
+
+    <!-- menu -->
+    <attr name="mo_dialog_menu_item_check_icon_margin_horizontal" format="dimension" />
+
+    <!-- content -->
+    <attr name="mo_dialog_content_padding_top" format="dimension" />
+    <attr name="mo_dialog_content_padding_top_when_no_title" format="dimension" />
+    <attr name="mo_dialog_content_padding_top_when_list" format="dimension" />
+    <attr name="mo_dialog_content_padding_bottom" format="dimension" />
+    <attr name="mo_dialog_content_padding_bottom_when_no_action" format="dimension" />
+    <attr name="mo_dialog_content_padding_bottom_when_action_block" format="dimension" />
+    <attr name="mo_dialog_content_message_text_size" format="dimension" />
+    <attr name="mo_dialog_content_list_item_height" format="dimension" />
+    <attr name="mo_dialog_content_list_item_text_size" format="dimension" />
+    <attr name="mo_dialog_content_list_item_bg" format="reference" />
+    <attr name="mo_dialog_confirm_content_padding_top" format="dimension" />
+    <attr name="mo_dialog_confirm_content_padding_bottom" format="dimension" />
+    <attr name="mo_dialog_edit_content_padding_top" format="dimension" />
+    <attr name="mo_dialog_edit_content_padding_bottom" format="dimension" />
+    <attr name="mo_dialog_block_content_text_size" format="dimension" />
+
+    <attr name="mo_dialog_menu_item_text_color" format="color" />
+
+    <!-- action -->
+    <attr name="mo_dialog_action_container_margin_bottom" format="dimension" />
+    <attr name="mo_dialog_action_container_margin_horizontal" format="dimension" />
+    <attr name="mo_dialog_action_button_min_width" format="dimension" />
+    <attr name="mo_dialog_action_button_height" format="dimension" />
+    <attr name="mo_dialog_action_button_margin_left" format="dimension" />
+    <attr name="mo_dialog_action_drawable_padding" format="dimension" />
+    <attr name="mo_dialog_action_button_text_size" format="dimension" />
+    <attr name="mo_dialog_action_button_padding_horizontal" format="dimension" />
+
+    <attr name="mo_dialog_action_block_container_margin_bottom" format="dimension" />
+    <attr name="mo_dialog_action_block_btn_height" format="dimension" />
+    <attr name="mo_dialog_action_btn_bg" format="reference" />
+    <attr name="mo_dialog_action_block_btn_bg" format="reference" />
+    <attr name="mo_dialog_action_text_negative_color" format="reference" />
+    <attr name="mo_dialog_action_text_color" format="reference" />
+
+    <!-- tips -->
+    <attr name="mo_tip_dialog_bg" format="reference" />
+    <attr name="mo_tip_dialog_min_width" format="dimension" />
+    <attr name="mo_tip_dialog_min_height" format="dimension" />
+    <attr name="mo_tip_dialog_padding_vertical" format="dimension" />
+    <attr name="mo_tip_dialog_padding_horizontal" format="dimension" />
+    <attr name="mo_tip_dialog_margin_horizontal" format="dimension" />
+    <!--**********************************************
+    *             mo list item bg                  *
+    **********************************************-->
+    <attr name="mo_list_item_height" format="dimension" />
+    <attr name="mo_list_item_height_higher" format="dimension" />
+
+
+    <!-- android 5.0以下不支持在drawable中用?attr，所以必须把所有的drawable放到theme中 -->
+    <attr name="mo_list_item_bg_with_border_bottom" format="reference" />
+    <attr name="mo_list_item_bg_with_border_bottom_pressed" format="reference" />
+    <attr name="mo_list_item_bg_with_border_bottom_inset_left" format="reference" />
+    <attr name="mo_list_item_bg_with_border_bottom_inset_left_pressed" format="reference" />
+    <attr name="mo_list_item_bg_with_border_top" format="reference" />
+    <attr name="mo_list_item_bg_with_border_top_pressed" format="reference" />
+    <attr name="mo_list_item_bg_with_border_top_inset_left" format="reference" />
+    <attr name="mo_list_item_bg_with_border_top_inset_left_pressed" format="reference" />
+    <attr name="mo_list_item_bg_with_border_double" format="reference" />
+    <attr name="mo_list_item_bg_with_border_double_pressed" format="reference" />
+
+    <attr name="mo_s_list_item_bg_with_border_bottom" format="reference" />
+    <attr name="mo_s_list_item_bg_with_border_bottom_inset" format="reference" />
+    <attr name="mo_s_list_item_bg_with_border_bottom_inset_left" format="reference" />
+    <attr name="mo_s_list_item_bg_with_border_top" format="reference" />
+    <attr name="mo_s_list_item_bg_with_border_top_inset_left" format="reference" />
+    <attr name="mo_s_list_item_bg_with_border_double" format="reference" />
+    <attr name="mo_s_list_item_bg_with_border_none" format="reference" />
+    <!--**********************************************
+    *             mo drawbale                      *
+    **********************************************-->
+    <attr name="mo_s_check_mark" format="reference" />
+    <attr name="mo_s_checkbox" format="reference" />
+    <!--**********************************************
+    *             SwipeBackLayout                      *
+    **********************************************-->
+    <declare-styleable name="MOSwipeBackLayout">
+        <attr name="edge_flag">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="bottom" value="2" />
+            <enum name="all" value="3" />
+        </attr>
+        <attr name="shadow_left" format="reference" />
+        <attr name="shadow_right" format="reference" />
+        <attr name="shadow_bottom" format="reference" />
+    </declare-styleable>
+
+    <attr name="MOSwipeBackLayoutStyle" format="reference" />
+</resources>
