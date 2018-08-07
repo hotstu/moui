@@ -11,9 +11,14 @@ import github.hotstu.naiue.util.MOStatusBarHelper;
  * @since 2018/7/13
  */
 public abstract class MOActivity extends AppCompatActivity {
+    private boolean translucent =  false;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MOStatusBarHelper.translucent(this);
+        translucent = MOStatusBarHelper.translucent(this);
+    }
+
+    public boolean isTranslucent() {
+        return translucent;
     }
 }

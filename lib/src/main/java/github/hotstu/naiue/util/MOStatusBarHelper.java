@@ -34,8 +34,8 @@ public class MOStatusBarHelper {
     private static @StatusBarType int mStatuBarType = STATUSBAR_TYPE_DEFAULT;
     private static Integer sTransparentValue;
 
-    public static void translucent(Activity activity) {
-        translucent(activity, 0x40000000);
+    public static boolean translucent(Activity activity) {
+        return translucent(activity, 0x40000000);
     }
 
     private static boolean supportTranslucent() {
@@ -51,17 +51,17 @@ public class MOStatusBarHelper {
      * @param activity 需要被设置沉浸式状态栏的 Activity。
      */
     @TargetApi(19)
-    public static void translucent(Activity activity, @ColorInt int colorOn5x) {
+    public static boolean translucent(Activity activity, @ColorInt int colorOn5x) {
         if (!supportTranslucent()) {
             // 版本小于4.4，绝对不考虑沉浸式
-            return;
+            return false;
         }
         // 小米和魅族4.4 以上版本支持沉浸式
         if (MODeviceHelper.isMeizu() || MODeviceHelper.isMIUI()) {
             Window window = activity.getWindow();
             window.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
                     WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            return;
+            return true;
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -94,7 +94,9 @@ public class MOStatusBarHelper {
 //            if(transparentValue != null) {
 //                window.getDecorView().setSystemUiVisibility(transparentValue);
 //            }
+            return true;
         }
+        return false;
     }
 
     /**

@@ -43,4 +43,8 @@ public class MOInsetFrameLayout extends FrameLayout implements InsetsAwareView {
         ViewCompat.setOnApplyWindowInsetsListener(this, new MORelayInsetsToChild());
     }
 
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+    }
 }

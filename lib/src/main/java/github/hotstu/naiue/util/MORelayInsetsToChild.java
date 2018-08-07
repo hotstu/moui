@@ -19,6 +19,11 @@ import github.hotstu.naiue.widget.InsetsAwareView;
  * @since 2018/7/13
  */
 public class MORelayInsetsToChild implements OnApplyWindowInsetsListener {
+    int preInsetLeft = 0;
+    int preInsetTop = 0;
+    int preInsetRight = 0;
+    int preInsetBottom = 0;
+
 
     @Override
     public WindowInsetsCompat onApplyWindowInsets(View v, WindowInsetsCompat insets) {
@@ -45,8 +50,13 @@ public class MORelayInsetsToChild implements OnApplyWindowInsetsListener {
                 break;
             }
         }
-        v.setPadding(v.getPaddingLeft() + childInsets.left, v.getPaddingTop() + childInsets.top,
-                v.getPaddingRight() + childInsets.right, v.getPaddingBottom() + childInsets.bottom);
+        //已修复 bug 不能反映 ViewCompat.requestApplyInsets(view);的作用
+        v.setPadding(v.getPaddingLeft() -preInsetLeft+ childInsets.left, v.getPaddingTop()-preInsetTop + childInsets.top,
+                v.getPaddingRight()-preInsetRight + childInsets.right, v.getPaddingBottom()-preInsetBottom + childInsets.bottom);
+        preInsetLeft = childInsets.left;
+        preInsetRight = childInsets.right;
+        preInsetTop = childInsets.top;
+        preInsetBottom = childInsets.bottom;
         return insets.consumeSystemWindowInsets();
 
     }
