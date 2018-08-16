@@ -19,23 +19,41 @@ import github.hotstu.naiue.widget.InsetsAwareView;
  * @since 2018/7/13
  */
 public class MORelayInsetsToChild implements OnApplyWindowInsetsListener {
-    int preInsetLeft = 0;
-    int preInsetTop = 0;
-    int preInsetRight = 0;
-    int preInsetBottom = 0;
+    protected int preInsetLeft = 0;
+    protected int preInsetTop = 0;
+    protected int preInsetRight = 0;
+    protected int preInsetBottom = 0;
+    private final boolean consumeBottom;
 
+    public MORelayInsetsToChild() {
+        this.consumeBottom = false;
+    }
+
+    /**
+     * 是否立即响应底部的inset，例如键盘弹起放下，不向下传递，默认为false
+     * @param consumeBottom
+     */
+    public MORelayInsetsToChild(boolean consumeBottom) {
+        this.consumeBottom = consumeBottom;
+    }
 
     @Override
     public WindowInsetsCompat onApplyWindowInsets(View v, WindowInsetsCompat insets) {
         ViewGroup viewGroup = ((ViewGroup) v);
         if (!insets.hasSystemWindowInsets()) {
+            v.setPadding(v.getPaddingLeft() -preInsetLeft, v.getPaddingTop()-preInsetTop,
+                    v.getPaddingRight()-preInsetRight, v.getPaddingBottom()-preInsetBottom);
+            preInsetLeft = 0;
+            preInsetRight = 0;
+            preInsetTop = 0;
+            preInsetBottom = 0;
             return insets;
         }
         Rect childInsets = new Rect();
         childInsets.set(insets.getSystemWindowInsetLeft(),
                 insets.getSystemWindowInsetTop(),
                 insets.getSystemWindowInsetRight(),
-                insets.getSystemWindowInsetBottom());
+                consumeBottom?0:insets.getSystemWindowInsetBottom());
         for (int i = 0; i < viewGroup.getChildCount(); i++) {
             View child = viewGroup.getChildAt(i);
             if (!ViewCompat.getFitsSystemWindows(child) && !isInsetsAwareContainer(child)) {
@@ -51,14 +69,15 @@ public class MORelayInsetsToChild implements OnApplyWindowInsetsListener {
             }
         }
         //已修复 bug 不能反映 ViewCompat.requestApplyInsets(view);的作用
-        v.setPadding(v.getPaddingLeft() -preInsetLeft+ childInsets.left, v.getPaddingTop()-preInsetTop + childInsets.top,
-                v.getPaddingRight()-preInsetRight + childInsets.right, v.getPaddingBottom()-preInsetBottom + childInsets.bottom);
+        v.setPadding(v.getPaddingLeft() -preInsetLeft+ childInsets.left,
+                v.getPaddingTop()-preInsetTop + childInsets.top,
+                v.getPaddingRight()-preInsetRight + childInsets.right,
+                v.getPaddingBottom()-preInsetBottom + (consumeBottom?insets.getSystemWindowInsetBottom():childInsets.bottom));
         preInsetLeft = childInsets.left;
         preInsetRight = childInsets.right;
         preInsetTop = childInsets.top;
-        preInsetBottom = childInsets.bottom;
+        preInsetBottom = (consumeBottom?insets.getSystemWindowInsetBottom():childInsets.bottom);
         return insets.consumeSystemWindowInsets();
-
     }
 
     public static boolean isInsetsAwareContainer(View child) {

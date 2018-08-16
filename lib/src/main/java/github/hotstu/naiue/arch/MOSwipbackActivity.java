@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.ViewGroup;
 
-import github.hotstu.naiue.util.MOStatusBarHelper;
 import github.hotstu.naiue.widget.swipback.MOSwipeBackLayout;
 import github.hotstu.naiue.widget.swipback.Utils;
 
@@ -41,7 +40,6 @@ public abstract class MOSwipbackActivity extends MOActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MOStatusBarHelper.translucent(this);
     }
 
     @Override

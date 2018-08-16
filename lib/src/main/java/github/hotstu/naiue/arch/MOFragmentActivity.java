@@ -7,7 +7,6 @@ import android.util.Log;
 import android.widget.FrameLayout;
 
 import github.hotstu.naiue.R;
-import github.hotstu.naiue.util.MOStatusBarHelper;
 import github.hotstu.naiue.widget.MOInsetFrameLayout;
 
 /**
@@ -25,7 +24,6 @@ public abstract class MOFragmentActivity extends MOActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MOStatusBarHelper.translucent(this);
         mFragmentContainer = new MOInsetFrameLayout(this);
         mFragmentContainer.setId(getContextViewId());
         setContentView(mFragmentContainer);

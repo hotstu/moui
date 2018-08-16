@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
@@ -20,6 +21,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
+import android.support.v4.view.ViewCompat;
 import android.view.TouchDelegate;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,11 +75,7 @@ public class MOViewHelper {
      */
     @SuppressWarnings("deprecation")
     public static void requestApplyInsets(Window window) {
-        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
-            window.getDecorView().requestFitSystemWindows();
-        } else if (Build.VERSION.SDK_INT >= 21) {
-            window.getDecorView().requestApplyInsets();
-        }
+        ViewCompat.requestApplyInsets(window.getDecorView());
     }
 
     /**
@@ -594,6 +592,7 @@ public class MOViewHelper {
     /**
      * inflate ViewStub 并返回对应的 View。
      */
+    @SuppressLint("ResourceType")
     public static View findViewFromViewStub(View parentView, int viewStubId, int inflatedViewId, int inflateLayoutResId) {
         if (null == parentView) {
             return null;

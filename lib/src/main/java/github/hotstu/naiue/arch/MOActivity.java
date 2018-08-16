@@ -14,8 +14,8 @@ public abstract class MOActivity extends AppCompatActivity {
     private boolean translucent =  false;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         translucent = MOStatusBarHelper.translucent(this);
+        super.onCreate(savedInstanceState);
     }
 
     public boolean isTranslucent() {

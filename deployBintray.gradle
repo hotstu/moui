@@ -94,5 +94,7 @@ javadoc { //javadoc 采用 utf-8 编码否则会报“GBK的不可映射字符�
         failOnError false
         encoding "UTF-8"
         charSet "UTF-8"
+        addStringOption('Xdoclint:none', '-quiet')
     }
+
 }
