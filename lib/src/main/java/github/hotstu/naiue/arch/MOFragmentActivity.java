@@ -2,6 +2,7 @@ package github.hotstu.naiue.arch;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.widget.FrameLayout;
@@ -49,8 +50,14 @@ public abstract class MOFragmentActivity extends MOActivity {
     }
 
     public void startFragment(MOFragment fragment) {
+        startFragment(fragment, null);
+    }
+
+    public void startFragment(MOFragment fragment, @Nullable MOFragment.TransitionConfig transitionConfig) {
         Log.i(TAG, "startFragment");
-        MOFragment.TransitionConfig transitionConfig = fragment.onFetchTransitionConfig();
+        if (transitionConfig == null) {
+            transitionConfig = fragment.onFetchTransitionConfig();
+        }
         String tagName = fragment.getTagNmae();
         getSupportFragmentManager()
                 .beginTransaction()

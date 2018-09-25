@@ -79,10 +79,14 @@ public abstract class MOFragment extends Fragment {
     }
 
     protected void startFragment(MOFragment fragment) {
+        startFragment(fragment, null);
+    }
+
+    protected void startFragment(MOFragment fragment,@Nullable TransitionConfig transitionConfig) {
         MOFragmentActivity baseFragmentActivity = this.getBaseFragmentActivity();
         if (baseFragmentActivity != null) {
             if (this.isAttachedToActivity()) {
-                baseFragmentActivity.startFragment(fragment);
+                baseFragmentActivity.startFragment(fragment, transitionConfig);
             } else {
                 Log.e("QMUIFragment", "fragment not attached:" + this);
             }
