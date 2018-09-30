@@ -157,5 +157,11 @@
         <item name="mo_s_list_item_bg_with_border_none">
             @drawable/mo_s_list_item_bg_with_border_none
         </item>
+        <!--**********************************************
+        *             控件样式                  *
+        **********************************************-->
+        <item name="MOPullRefreshLayoutStyle">@style/MOPullRefreshLayout</item>
+
+
     </style>
 </resources>

@@ -144,14 +144,14 @@ public class MOSwipeBackLayout extends MOInsetFrameLayout {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MOSwipeBackLayout, defStyle,
                 R.style.MOSwipeBackLayout);
 
-        int mode = EDGE_FLAGS[a.getInt(R.styleable.MOSwipeBackLayout_edge_flag, 0)];
+        int mode = EDGE_FLAGS[a.getInt(R.styleable.MOSwipeBackLayout_mo_edge_flag, 0)];
         setEdgeTrackingEnabled(mode);
 
-        int shadowLeft = a.getResourceId(R.styleable.MOSwipeBackLayout_shadow_left,
+        int shadowLeft = a.getResourceId(R.styleable.MOSwipeBackLayout_mo_shadow_left,
                 R.drawable.mo_swipback_shadow_left);
-        int shadowRight = a.getResourceId(R.styleable.MOSwipeBackLayout_shadow_right,
+        int shadowRight = a.getResourceId(R.styleable.MOSwipeBackLayout_mo_shadow_right,
                 R.drawable.mo_swipback_shadow_right);
-        int shadowBottom = a.getResourceId(R.styleable.MOSwipeBackLayout_shadow_bottom,
+        int shadowBottom = a.getResourceId(R.styleable.MOSwipeBackLayout_mo_shadow_bottom,
                 R.drawable.mo_swipback_shadow_bottom);
         setShadow(shadowLeft, EDGE_LEFT);
         setShadow(shadowRight, EDGE_RIGHT);

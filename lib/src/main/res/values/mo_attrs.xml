@@ -125,16 +125,37 @@
     *             SwipeBackLayout                      *
     **********************************************-->
     <declare-styleable name="MOSwipeBackLayout">
-        <attr name="edge_flag">
+        <attr name="mo_edge_flag">
             <enum name="left" value="0" />
             <enum name="right" value="1" />
             <enum name="bottom" value="2" />
             <enum name="all" value="3" />
         </attr>
-        <attr name="shadow_left" format="reference" />
-        <attr name="shadow_right" format="reference" />
-        <attr name="shadow_bottom" format="reference" />
+        <attr name="mo_shadow_left" format="reference" />
+        <attr name="mo_shadow_right" format="reference" />
+        <attr name="mo_shadow_bottom" format="reference" />
     </declare-styleable>
 
     <attr name="MOSwipeBackLayoutStyle" format="reference" />
+
+    <!--**************** MOPullRefreshLayout ******************-->
+    <declare-styleable name="MOPullRefreshLayout">
+        <!-- RefreshView的初始offset -->
+        <attr name="mo_refresh_init_offset" format="dimension"/>
+        <!-- 刷新时RefreshView的offset -->
+        <attr name="mo_refresh_end_offset" format="dimension"/>
+        <!-- TargetView(ListView或者ScrollView等)的初始位置 -->
+        <attr name="mo_target_init_offset" format="dimension"/>
+        <!-- 刷新时TargetView(ListView或者ScrollView等)的位置-->
+        <attr name="mo_target_refresh_offset" format="dimension"/>
+        <!-- 是否自动根据RefreshView的高度计算RefreshView的初始位置-->
+        <attr name="mo_auto_calculate_refresh_init_offset" format="boolean"/>
+        <!-- 是否自动根据TargetView在刷新时的位置计算RefreshView的结束位置-->
+        <attr name="mo_auto_calculate_refresh_end_offset" format="boolean"/>
+        <!-- TargetView的刷新位置与RefreshView高度相等-->
+        <attr name="mo_equal_target_refresh_offset_to_refresh_view_height" format="boolean"/>
+    </declare-styleable>
+    <attr name="MOPullRefreshLayoutStyle" format="reference"/>
+
+
 </resources>

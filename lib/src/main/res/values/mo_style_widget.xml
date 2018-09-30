@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="MOSwipeBackLayout">
-        <item name="shadow_left">@drawable/mo_swipback_shadow_left</item>
-        <item name="shadow_right">@drawable/mo_swipback_shadow_right</item>
-        <item name="shadow_bottom">@drawable/mo_swipback_shadow_bottom</item>
+        <item name="mo_shadow_left">@drawable/mo_swipback_shadow_left</item>
+        <item name="mo_shadow_right">@drawable/mo_swipback_shadow_right</item>
+        <item name="mo_shadow_bottom">@drawable/mo_swipback_shadow_bottom</item>
     </style>
+    <!-- QMUIPullRefreshLayout -->
+    <style name="MOPullRefreshLayout">
+        <item name="mo_target_init_offset">0dp</item>
+        <item name="mo_target_refresh_offset">72dp</item>
+        <item name="mo_auto_calculate_refresh_init_offset">true</item>
+        <item name="mo_auto_calculate_refresh_end_offset">true</item>
+    </style>
+
 </resources>

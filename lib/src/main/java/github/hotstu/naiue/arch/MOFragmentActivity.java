@@ -39,6 +39,8 @@ public abstract class MOFragmentActivity extends MOActivity {
         MOFragment fragment = getCurrentFragment();
         if (fragment != null) {
             popBackStack();
+        } else {
+            super.onBackPressed();
         }
     }
 
