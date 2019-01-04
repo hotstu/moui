@@ -28,7 +28,6 @@ dependencies {
     implementation("com.android.support:design:${SUPPORT_VERSION}")
 
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
 }
 
 apply from: "../deployBintray.gradle"
