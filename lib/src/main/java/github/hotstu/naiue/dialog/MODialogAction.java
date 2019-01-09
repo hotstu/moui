@@ -6,8 +6,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.IntDef;
-import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -19,6 +17,8 @@ import android.widget.LinearLayout;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+import androidx.annotation.IntDef;
+import androidx.core.content.ContextCompat;
 import github.hotstu.naiue.R;
 import github.hotstu.naiue.util.MOResHelper;
 import github.hotstu.naiue.util.MOViewHelper;

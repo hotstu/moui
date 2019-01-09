@@ -1,8 +1,9 @@
 package github.hotstu.naiue.widget.recycler;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.AttributeSet;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 /**
  * 让linearLayoutManager 支持predictive animation

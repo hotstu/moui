@@ -2,11 +2,11 @@ package github.hotstu.naiue.arch;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.widget.FrameLayout;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
 import github.hotstu.naiue.R;
 import github.hotstu.naiue.widget.MOInsetFrameLayout;
 

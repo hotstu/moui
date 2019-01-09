@@ -1,9 +1,9 @@
 package github.hotstu.naiue.arch;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
 import github.hotstu.naiue.widget.swipback.MOSwipeBackLayout;
 import github.hotstu.naiue.widget.swipback.Utils;
 
@@ -11,7 +11,6 @@ import static github.hotstu.naiue.widget.swipback.MOSwipeBackLayout.EDGE_LEFT;
 
 
 public abstract class MOSwipbackActivity extends MOActivity {
-    private static final String TAG = "MOSwipbackActivity";
     private MOSwipeBackLayout.SwipeListener listener = new MOSwipeBackLayout.SwipeListener() {
         @Override
         public void onScrollStateChange(int state, float scrollPercent) {

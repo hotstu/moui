@@ -7,7 +7,6 @@ import android.content.res.Configuration;
 import android.os.Binder;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 import java.io.File;
@@ -17,6 +16,8 @@ import java.lang.reflect.Method;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import androidx.annotation.Nullable;
 
 /**
  * @author cginechen

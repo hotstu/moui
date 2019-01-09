@@ -2,11 +2,11 @@ package github.hotstu.naiuedemo
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.text.InputType
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import github.hotstu.naiue.arch.MOSwipbackActivity
 import github.hotstu.naiue.dialog.MODialog
 import github.hotstu.naiue.dialog.MODialogAction

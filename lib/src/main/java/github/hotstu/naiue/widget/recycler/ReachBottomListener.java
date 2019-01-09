@@ -1,6 +1,7 @@
 package github.hotstu.naiue.widget.recycler;
 
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 判断recyclerview到底部的辅助类，继承fetchdata方法实现加载更多功能

@@ -1,13 +1,13 @@
 package github.hotstu.naiue.util;
 
 import android.graphics.Rect;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.view.OnApplyWindowInsetsListener;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.WindowInsetsCompat;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.view.OnApplyWindowInsetsListener;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import github.hotstu.naiue.widget.InsetsAwareView;
 
 /**

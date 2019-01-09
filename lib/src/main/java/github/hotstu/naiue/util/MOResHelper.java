@@ -4,10 +4,11 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.AttrRes;
-import android.support.annotation.ColorInt;
-import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
+
+import androidx.annotation.AttrRes;
+import androidx.annotation.ColorInt;
+import androidx.core.content.ContextCompat;
 
 /**
  *
@@ -22,7 +23,8 @@ public class MOResHelper {
         return typedValue.getFloat();
     }
 
-    public static @ColorInt int getAttrColor(Context context, @AttrRes int attrRes){
+    public static @ColorInt
+    int getAttrColor(Context context, @AttrRes int attrRes){
         TypedValue typedValue = new TypedValue();
         context.getTheme().resolveAttribute(attrRes, typedValue, true);
         return typedValue.data;

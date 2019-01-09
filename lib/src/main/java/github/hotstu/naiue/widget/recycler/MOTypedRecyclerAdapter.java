@@ -1,8 +1,6 @@
 package github.hotstu.naiue.widget.recycler;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
+
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -11,12 +9,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 
 public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
 
     public interface AdapterDelegate {
-        ViewHolder onCreateViewHolder(MOTypedRecyclerAdapter adapter, ViewGroup parent);
-        void onBindViewHolder(MOTypedRecyclerAdapter adapter, ViewHolder holder, Object data);
+        RecyclerView.ViewHolder onCreateViewHolder(MOTypedRecyclerAdapter adapter, ViewGroup parent);
+        void onBindViewHolder(MOTypedRecyclerAdapter adapter, RecyclerView.ViewHolder holder, Object data);
         boolean isDelegateOf(Class<?> clazz, Object item, int position);
     }
     private static final String TAG = "MOTypedRecyclerAdapter";
@@ -25,14 +26,14 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
 
     AdapterDelegate defaultDelegate = new AdapterDelegate() {
         @Override
-        public ViewHolder onCreateViewHolder(@NonNull MOTypedRecyclerAdapter adapter,@NonNull ViewGroup parent) {
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull MOTypedRecyclerAdapter adapter, @NonNull ViewGroup parent) {
             TextView v = new TextView(parent.getContext());
             v.setText("不支持的数据类型，请检查adapter配置");
             return new MOCommonViewHolder(v);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull MOTypedRecyclerAdapter adapter, @NonNull ViewHolder holder, @NonNull Object data) {
+        public void onBindViewHolder(@NonNull MOTypedRecyclerAdapter adapter, @NonNull RecyclerView.ViewHolder holder, @NonNull Object data) {
 
         }
 
@@ -65,7 +66,7 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == -1) {
             return defaultDelegate.onCreateViewHolder(this, parent);
         }
@@ -73,7 +74,7 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         int viewType = holder.getItemViewType();
         if(viewType == -1) {
             defaultDelegate.onBindViewHolder(this, holder, getItem(position));

@@ -7,8 +7,6 @@ import android.content.DialogInterface;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.v7.widget.AppCompatTextView;
 import android.text.InputType;
 import android.text.method.TransformationMethod;
 import android.util.TypedValue;
@@ -29,6 +27,8 @@ import android.widget.ScrollView;
 
 import java.util.ArrayList;
 
+import androidx.annotation.LayoutRes;
+import androidx.appcompat.widget.AppCompatTextView;
 import github.hotstu.naiue.R;
 import github.hotstu.naiue.util.MODisplayHelper;
 import github.hotstu.naiue.util.MOResHelper;

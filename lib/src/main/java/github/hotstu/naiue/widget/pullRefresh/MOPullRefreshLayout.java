@@ -2,15 +2,6 @@ package github.hotstu.naiue.widget.pullRefresh;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.NestedScrollingParent;
-import android.support.v4.view.NestedScrollingParentHelper;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -21,6 +12,16 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.Scroller;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.content.ContextCompat;
+import androidx.core.view.MotionEventCompat;
+import androidx.core.view.NestedScrollingParent;
+import androidx.core.view.NestedScrollingParentHelper;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import github.hotstu.naiue.R;
 import github.hotstu.naiue.util.MODisplayHelper;
 import github.hotstu.naiue.util.MOResHelper;
@@ -912,7 +913,7 @@ public class MOPullRefreshLayout extends ViewGroup implements NestedScrollingPar
         void onPull(int offset, int total, int overPull);
     }
 
-    public static class RefreshView extends android.support.v7.widget.AppCompatImageView implements IRefreshView {
+    public static class RefreshView extends AppCompatImageView implements IRefreshView {
         private static final int MAX_ALPHA = 255;
         private static final float TRIM_RATE = 0.85f;
         private static final float TRIM_OFFSET = 0.4f;

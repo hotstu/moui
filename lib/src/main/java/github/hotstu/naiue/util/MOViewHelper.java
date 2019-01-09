@@ -19,9 +19,6 @@ import android.graphics.RectF;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewCompat;
 import android.view.TouchDelegate;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +36,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
+
 /**
  * @author cginechen
  * @date 2016-03-17
@@ -50,7 +51,7 @@ public class MOViewHelper {
 
 
     private static final int[] APPCOMPAT_CHECK_ATTRS = {
-            android.support.v7.appcompat.R.attr.colorPrimary
+            androidx.appcompat.R.attr.colorPrimary
     };
 
     public static void checkAppCompatTheme(Context context) {

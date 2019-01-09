@@ -2,8 +2,6 @@ package github.hotstu.naiue.dialog;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.annotation.StyleRes;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -15,6 +13,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.StyleRes;
 import github.hotstu.naiue.R;
 import github.hotstu.naiue.util.MODisplayHelper;
 import github.hotstu.naiue.util.MOResHelper;
