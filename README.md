@@ -1,3 +1,4 @@
+ [ ![Download](https://api.bintray.com/packages/hglf/maven/naiue/images/download.svg) ](https://bintray.com/hglf/maven/naiue/_latestVersion)
 # naiue
 android开发基础UI库
 
