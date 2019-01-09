@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 
 /**
  * 让linearLayoutManager 支持predictive animation
+ *
  * @author hglf
  * @since 2018/1/4
  */
