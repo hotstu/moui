@@ -1,4 +1,4 @@
- [ ![Download](https://api.bintray.com/packages/hglf/maven/naiue/images/download.svg) ](https://bintray.com/hglf/maven/naiue/_latestVersion)
+[![author](https://img.shields.io/badge/author-hglf-blue.svg)](https://github.com/hotstu) [ ![Download](https://api.bintray.com/packages/hglf/maven/naiue/images/download.svg) ](https://bintray.com/hglf/maven/naiue/_latestVersion) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)![androidx](https://img.shields.io/badge/androidx-ok-green.svg)
 # naiue
 android开发基础UI库
 
@@ -25,9 +25,7 @@ implementation 'gitbub.hotstu.naiue:lib:1.0.0'
 
 ## more
 
-|简书| 掘金|JCenter | dockerHub|
-| ------------- |------------- |------------- |------------- |
-| [简书](https://www.jianshu.com/u/ca2207af2001) | [掘金](https://juejin.im/user/5bee320651882516be2ebbfe) |[JCenter ](https://bintray.com/hglf/maven)      | [dockerHub](https://hub.docker.com/u/hglf)|
-
-
+|Github|简书| 掘金|JCenter | dockerHub|
+| -------------| ------------- |------------- |------------- |------------- |
+| [Github](https://github.com/hotstu)| [简书](https://www.jianshu.com/u/ca2207af2001) | [掘金](https://juejin.im/user/5bee320651882516be2ebbfe) |[JCenter ](https://bintray.com/hglf/maven)      | [dockerHub](https://hub.docker.com/u/hglf)|
 
