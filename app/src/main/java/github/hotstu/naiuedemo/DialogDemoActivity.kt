@@ -126,7 +126,7 @@ class DialogDemoActivity : MOSwipbackActivity() {
                 val items = arrayOf("选项1", "选项2", "选项3", "选项4", "选项5", "选项6", "选项7", "选项8", "选项9", "选项10", "选项11", "选项12", "选项13", "选项14", "选项15", "选项16", "选项17", "选项18")
                 val builder = MODialog.MultiCheckableDialogBuilder(this)
                         .setCheckedItems(intArrayOf(1, 3))
-                        .addItems(items, DialogInterface.OnClickListener { dialog, which -> })
+                        .addItems(items, { dialog, which -> })
                 builder.addAction("取消") { dialog, index -> dialog.dismiss() }
                 builder.addAction("提交") { dialog, index ->
                     var result = "你选择了 "
