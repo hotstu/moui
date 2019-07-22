@@ -1,4 +1,7 @@
-[![author](https://img.shields.io/badge/author-hglf-blue.svg)](https://github.com/hotstu) [ ![Download](https://api.bintray.com/packages/hglf/maven/naiue/images/download.svg) ](https://bintray.com/hglf/maven/naiue/_latestVersion) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)![androidx](https://img.shields.io/badge/androidx-ok-green.svg)
+[![author](https://img.shields.io/badge/author-hglf-blue.svg)](https://github.com/hotstu)
+[![Download](https://api.bintray.com/packages/hglf/maven/naiue/images/download.svg) ](https://bintray.com/hglf/maven/naiue/_latestVersion) 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 # naiue
 android开发基础UI库
 
