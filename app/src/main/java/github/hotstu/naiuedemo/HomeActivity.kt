@@ -8,10 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import github.hotstu.naiue.util.MOStatusBarHelper
-import github.hotstu.naiue.widget.recycler.MOCommonViewHolder
-import github.hotstu.naiue.widget.recycler.MOTypedRecyclerAdapter
-import github.hotstu.naiue.widget.recycler.PredictiveLinearLayoutManager
-import github.hotstu.naiue.widget.recycler.ReachBottomListener
+import github.hotstu.naiue.widget.recycler.*
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 
@@ -36,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private val adapterDelegate: MOTypedRecyclerAdapter.AdapterDelegate = object : MOTypedRecyclerAdapter.AdapterDelegate {
+    private val adapterDelegate: MOAdapterDelegate<MOTypedRecyclerAdapter> = object : MOAdapterDelegate<MOTypedRecyclerAdapter> {
         override fun onCreateViewHolder(adapter: MOTypedRecyclerAdapter, parent: ViewGroup): RecyclerView.ViewHolder {
             val inflate = LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
             return MOCommonViewHolder(inflate)

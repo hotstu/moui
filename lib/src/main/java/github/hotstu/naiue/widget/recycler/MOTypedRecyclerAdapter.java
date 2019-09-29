@@ -5,26 +5,20 @@ import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 
 public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
-
-    public interface AdapterDelegate {
-        RecyclerView.ViewHolder onCreateViewHolder(MOTypedRecyclerAdapter adapter, ViewGroup parent);
-        void onBindViewHolder(MOTypedRecyclerAdapter adapter, RecyclerView.ViewHolder holder, Object data);
-        boolean isDelegateOf(Class<?> clazz, Object item, int position);
-    }
     private static final String TAG = "MOTypedRecyclerAdapter";
     final List mList;
-    final List<AdapterDelegate> delegates;
+    final List<MOAdapterDelegate<MOTypedRecyclerAdapter>> delegates;
 
-    AdapterDelegate defaultDelegate = new AdapterDelegate() {
+    private MOAdapterDelegate<MOTypedRecyclerAdapter> defaultDelegate = new MOAdapterDelegate<MOTypedRecyclerAdapter>() {
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(@NonNull MOTypedRecyclerAdapter adapter, @NonNull ViewGroup parent) {
             TextView v = new TextView(parent.getContext());
@@ -49,15 +43,15 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
         delegates = new ArrayList<>();
     }
 
-    public void addDelegate(AdapterDelegate delegate) {
+    public void addDelegate(MOAdapterDelegate delegate) {
         delegates.add(delegate);
     }
 
-    public void addDelegate(int index, AdapterDelegate delegate) {
+    public void addDelegate(int index, MOAdapterDelegate delegate) {
         delegates.add(index, delegate);
     }
 
-    public AdapterDelegate getDelegate(int index) {
+    public MOAdapterDelegate getDelegate(int index) {
         return delegates.get(index);
     }
 
@@ -76,7 +70,7 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         int viewType = holder.getItemViewType();
-        if(viewType == -1) {
+        if (viewType == -1) {
             defaultDelegate.onBindViewHolder(this, holder, getItem(position));
             return;
         }
@@ -89,7 +83,7 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
         Class<?> type = item.getClass();
         //Log.d(TAG, "item.class=" + type.getCanonicalName());
         for (int i = 0; i < delegates.size(); i++) {
-            AdapterDelegate yhTypedAdapterDelegate = delegates.get(i);
+            MOAdapterDelegate yhTypedAdapterDelegate = delegates.get(i);
             if (yhTypedAdapterDelegate.isDelegateOf(type, item, position)) {
                 return i;
             }
@@ -102,38 +96,38 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
         return mList.size();
     }
 
-    public final void setDataSet(List list) {
+    public void setDataSet(List list) {
         mList.clear();
         mList.addAll(list);
         notifyDataSetChanged();
     }
 
-    public final void clearDataSet() {
+    public void clearDataSet() {
         notifyItemRangeRemoved(0, mList.size());
         mList.clear();
     }
 
-    public final Object getItem(int position) {
+    public Object getItem(int position) {
         return mList.get(position);
     }
 
-    public final void addItem(Object object) {
+    public void addItem(Object object) {
         mList.add(object);
         notifyItemInserted(mList.size() - 1);
     }
 
-    public final void addItem(Object object, int position) {
+    public void addItem(Object object, int position) {
         mList.add(position, object);
         notifyItemInserted(position);
     }
 
-    public final void addItems(List list) {
+    public void addItems(List list) {
         int start = mList.size();
         mList.addAll(list);
         notifyItemRangeInserted(start, list.size());
     }
 
-    public final void removeItem(int position) {
+    public void removeItem(int position) {
         if (position == RecyclerView.NO_POSITION) {
             Log.w(TAG, "removeItem with index = NO_POSITION ");
             return;
@@ -142,7 +136,7 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
         notifyItemRemoved(position);
     }
 
-    public final int findItem(Object item) {
+    public int findItem(Object item) {
         int position = RecyclerView.NO_POSITION;
         for (int i = 0; i < mList.size(); i++) {
             if (item.equals(mList.get(i))) {
@@ -153,7 +147,7 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
         return position;
     }
 
-    public final void removeItem(Object item) {
+    public void removeItem(Object item) {
         int position = findItem(item);
         if (position != RecyclerView.NO_POSITION) {
             mList.remove(position);
@@ -162,8 +156,7 @@ public class MOTypedRecyclerAdapter extends RecyclerView.Adapter {
     }
 
 
-
-    public final void moveItem(int fromPostion, int toPositon) {
+    public void moveItem(int fromPostion, int toPositon) {
         //Log.d(TAG, "moveItem() called with: " + "fromPostion = [" + fromPostion + "], toPositon = [" + toPositon + "]");
         Collections.swap(mList, fromPostion, toPositon);
         notifyItemMoved(fromPostion, toPositon);
