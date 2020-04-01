@@ -2,15 +2,21 @@ apply plugin: 'com.android.library'
 
 android {
     resourcePrefix 'mo_'
-    compileSdkVersion 28
+    compileSdkVersion 29
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+//    kotlinOptions {
+//        jvmTarget = "1.8"
+//    }
     dataBinding {
         enabled = true
     }
@@ -26,9 +32,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation('com.google.android.material:material:1.0.0')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation('com.google.android.material:material:1.1.0')
 
     testImplementation 'junit:junit:4.12'
 }

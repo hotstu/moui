@@ -156,6 +156,8 @@
         <attr name="mo_equal_target_refresh_offset_to_refresh_view_height" format="boolean"/>
     </declare-styleable>
     <attr name="MOPullRefreshLayoutStyle" format="reference"/>
-
+    <declare-styleable name="MOExpandableLayout">
+        <attr name="mo_isExpanded" format="boolean"/>
+    </declare-styleable>
 
 </resources>
