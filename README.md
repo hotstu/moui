@@ -8,7 +8,7 @@ android开发基础UI库
 ## how to use
 
 ```
-implementation 'gitbub.hotstu.naiue:lib:1.0.0'
+implementation 'github.hotstu.naiue:lib:1.0.0'
 ```
 
 ## changelog
