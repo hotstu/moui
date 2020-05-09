@@ -11,6 +11,7 @@ class MoFragmentDemoActivity : MOFragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         startFragment(ColorFragment.getInstance(Color.GREEN));
+        startFragment(ColorFragment.getInstance(Color.BLUE));
     }
 
 
@@ -28,7 +29,7 @@ class MoFragmentDemoActivity : MOFragmentActivity() {
          * onCreateView
          */
         override fun onCreateView(): View {
-            val v = FrameLayout(context)
+            val v = FrameLayout(requireContext())
             v.fitsSystemWindows = true
             v.setBackgroundColor( arguments?.getInt("color", Color.BLUE)?:Color.BLUE)
             return v

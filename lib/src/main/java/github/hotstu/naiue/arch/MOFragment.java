@@ -8,20 +8,19 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import github.hotstu.naiue.R;
 import github.hotstu.naiue.util.MOViewHelper;
 import github.hotstu.naiue.widget.swipback.MOSwipeBackLayout;
-import github.hotstu.naiue.widget.swipback.Utils;
 
 /**
  * 基础 Fragment 类，提供各种基础功能。
@@ -70,6 +69,16 @@ public abstract class MOFragment extends Fragment {
 
     public boolean isAttachedToActivity() {
         return !isRemoving() && mBaseView != null;
+    }
+
+    /**
+     * 重写这个方法如果需要自己指定返回时的临时view/override this if your want show custom view when swiping back
+     * @param inflater
+     * @param container
+     * @return
+     */
+    public View getBackingView(LayoutInflater inflater, ViewGroup container) {
+        return  onCreateView(inflater, container, null);
     }
 
     @Override
@@ -155,33 +164,45 @@ public abstract class MOFragment extends Fragment {
                         if (fragmentManager == null) {
                             return;
                         }
-                        int backstackCount = fragmentManager.getBackStackEntryCount();
-                        if (backstackCount > 0) {
-                            try {
-                                FragmentManager.BackStackEntry backStackEntry = fragmentManager.getBackStackEntryAt(backstackCount - 1);
-
-                                Field opsField = backStackEntry.getClass().getDeclaredField("mOps");
-                                opsField.setAccessible(true);
-                                Object opsObj = opsField.get(backStackEntry);
-                                if (opsObj instanceof List<?>) {
-                                    List<?> ops = (List<?>) opsObj;
-                                    for (Object op : ops) {
-                                        Field cmdField = op.getClass().getDeclaredField("cmd");
-                                        cmdField.setAccessible(true);
-                                        int cmd = (int) cmdField.get(op);
-                                        if (cmd == 1) {
-                                            Field popEnterAnimField = op.getClass().getDeclaredField("popExitAnim");
+                        Utils.findAndModifyOpInBackStackRecord(fragmentManager, -1, new Utils.OpHandler() {
+                            @Override
+                            public boolean handle(Object op) {
+                                Field cmdField = Utils.getOpCmdField(op);
+                                if (cmdField == null) {
+                                    return false;
+                                }
+                                try {
+                                    cmdField.setAccessible(true);
+                                    int cmd = (int) cmdField.get(op);
+                                    if (cmd == 1) {
+                                        Field popEnterAnimField = Utils.getOpPopExitAnimField(op);
+                                        if (popEnterAnimField != null) {
                                             popEnterAnimField.setAccessible(true);
                                             popEnterAnimField.set(op, 0);
                                         }
+                                    } else if (cmd == 3) {
+                                        Field popExitAnimField = Utils.getOpPopEnterAnimField(op);
+                                        if (popExitAnimField != null) {
+                                            popExitAnimField.setAccessible(true);
+                                            popExitAnimField.set(op, 0);
+                                        }
                                     }
+                                } catch (IllegalAccessException e) {
+                                    e.printStackTrace();
                                 }
-                            } catch (NoSuchFieldException e) {
-                                e.printStackTrace();
-                            } catch (IllegalAccessException e) {
-                                e.printStackTrace();
+                                return false;
                             }
-                        }
+
+                            @Override
+                            public boolean needReNameTag() {
+                                return false;
+                            }
+
+                            @Override
+                            public String newTagName() {
+                                return null;
+                            }
+                        });
                         popBackStack();
                     }
                 }
@@ -217,58 +238,69 @@ public abstract class MOFragment extends Fragment {
                 }
                 int backstackCount = fragmentManager.getBackStackEntryCount();
                 if (backstackCount > 1) {
-                    try {
-                        FragmentManager.BackStackEntry backStackEntry = fragmentManager.getBackStackEntryAt(backstackCount - 1);
-
-                        Field opsField = backStackEntry.getClass().getDeclaredField("mOps");
-                        opsField.setAccessible(true);
-                        Object opsObj = opsField.get(backStackEntry);
-                        if (opsObj instanceof List<?>) {
-                            List<?> ops = (List<?>) opsObj;
-                            for (Object op : ops) {
-                                Field cmdField = op.getClass().getDeclaredField("cmd");
+                    Utils.findAndModifyOpInBackStackRecord(fragmentManager, -1, new Utils.OpHandler() {
+                        @Override
+                        public boolean handle(Object op) {
+                            Field cmdField = Utils.getOpCmdField(op);
+                            if (cmdField == null) {
+                                return false;
+                            }
+                            try {
                                 cmdField.setAccessible(true);
                                 int cmd = (int) cmdField.get(op);
                                 if (cmd == 3) {
-                                    Field popEnterAnimField = op.getClass().getDeclaredField("popEnterAnim");
-                                    popEnterAnimField.setAccessible(true);
-                                    popEnterAnimField.set(op, 0);
+                                    Field popEnterAnimField = Utils.getOpPopEnterAnimField(op);
+                                    if (popEnterAnimField != null) {
+                                        popEnterAnimField.setAccessible(true);
+                                        popEnterAnimField.set(op, 0);
+                                    }
 
-                                    Field fragmentField = op.getClass().getDeclaredField("fragment");
-                                    fragmentField.setAccessible(true);
-                                    Object fragmentObject = fragmentField.get(op);
-                                    if (fragmentObject instanceof MOFragment) {
-                                        MOFragment fragment = (MOFragment) fragmentObject;
-                                        ViewGroup container = getBaseFragmentActivity().getFragmentContainer();
-                                        fragment.isCreateForSwipeBack = true;
-                                        View baseView = null;
-                                        if (fragment.getContext() != null) {
-                                            baseView = fragment.onCreateView(LayoutInflater.from(getContext()), container, null);
-                                        }
-                                        fragment.isCreateForSwipeBack = false;
-                                        if (baseView != null) {
-                                            baseView.setTag(R.id.mo_arch_swipe_layout_in_back, SWIPE_BACK_VIEW);
-                                            container.addView(baseView, 0);
-                                            int offset = Math.abs(backViewInitOffset());
-                                            if (edgeFlag == EDGE_BOTTOM) {
-                                                ViewCompat.offsetTopAndBottom(baseView, offset);
-                                            } else if (edgeFlag == EDGE_RIGHT) {
-                                                ViewCompat.offsetLeftAndRight(baseView, offset);
-                                            } else {
-                                                ViewCompat.offsetLeftAndRight(baseView, -1 * offset);
+
+                                    Field fragmentField = Utils.getOpFragmentField(op);
+                                    if (fragmentField != null) {
+                                        fragmentField.setAccessible(true);
+                                        Object fragmentObject = fragmentField.get(op);
+                                        if (fragmentObject instanceof MOFragment) {
+                                            MOFragment fragment = (MOFragment) fragmentObject;
+                                            ViewGroup container = getBaseFragmentActivity().getFragmentContainer();
+                                            fragment.isCreateForSwipeBack = true;
+                                            View baseView = null;
+                                            if (fragment.getContext() != null) {
+                                                //填充了底层的fragment 到当前层
+                                                baseView = fragment.getBackingView(LayoutInflater.from(getContext()), container);
+                                            }
+                                            fragment.isCreateForSwipeBack = false;
+                                            if (baseView != null) {
+                                                baseView.setTag(R.id.mo_arch_swipe_layout_in_back, SWIPE_BACK_VIEW);
+                                                container.addView(baseView, 0);
+                                                int offset = Math.abs(backViewInitOffset());
+                                                if (edgeFlag == EDGE_BOTTOM) {
+                                                    ViewCompat.offsetTopAndBottom(baseView, offset);
+                                                } else if (edgeFlag == EDGE_RIGHT) {
+                                                    ViewCompat.offsetLeftAndRight(baseView, offset);
+                                                } else {
+                                                    ViewCompat.offsetLeftAndRight(baseView, -1 * offset);
+                                                }
                                             }
                                         }
                                     }
                                 }
+                            } catch (IllegalAccessException e) {
+                                e.printStackTrace();
                             }
+                            return false;
                         }
 
+                        @Override
+                        public boolean needReNameTag() {
+                            return false;
+                        }
 
-                    } catch (NoSuchFieldException e) {
-                        e.printStackTrace();
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    }
+                        @Override
+                        public String newTagName() {
+                            return null;
+                        }
+                    });
                 } else {
                     if (getActivity() != null) {
                         getActivity().getWindow().getDecorView().setBackgroundColor(0);
