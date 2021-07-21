@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/mo_gray_5"
 
-    tools:context="github.hotstu.naiuedemo.DialogDemoActivity">
+    tools:context=".DialogDemoActivity">
 
     <include
         android:id="@+id/include"

@@ -2,13 +2,13 @@
 [![Download](https://api.bintray.com/packages/hglf/maven/naiue/images/download.svg) ](https://bintray.com/hglf/maven/naiue/_latestVersion) 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-# naiue
-android开发基础UI库
+# MOUI(原名naiue)
+从QMUI中衍生(精简)出的android开发基础UI库, 对沉浸式状态栏做了较好的适配
 
 ## how to use
 
 ```
-implementation 'github.hotstu.naiue:lib:1.0.0'
+implementation 'io.github.hotstu.naiue:lib:1.0.0'
 ```
 
 ## changelog

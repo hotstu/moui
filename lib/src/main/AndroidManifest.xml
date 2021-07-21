@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="github.hotstu.naiue" >
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    package="io.github.hotstu.moui" >
+<!-- it's user 's responsibility to add the permission below if needed-->
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
 </manifest>
