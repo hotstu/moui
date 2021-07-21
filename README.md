@@ -8,7 +8,7 @@
 ## how to use
 
 ```
-implementation 'io.github.hotstu.naiue:lib:1.0.0'
+implementation 'io.github.hotstu.moui:lib:1.0.0'
 ```
 
 ## changelog
