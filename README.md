@@ -1,5 +1,5 @@
 [![author](https://img.shields.io/badge/author-hglf-blue.svg)](https://github.com/hotstu)
-[![Download](https://api.bintray.com/packages/hglf/maven/naiue/images/download.svg) ](https://bintray.com/hglf/maven/naiue/_latestVersion) 
+[![Download](https://img.shields.io/maven-central/v/io.github.hotstu.moui/lib?style=flat-square) ](https://search.maven.org/search?q=g:io.github.hotstu.moui) 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # MOUI(原名naiue)
@@ -12,6 +12,9 @@ implementation 'io.github.hotstu.moui:lib:1.0.0'
 ```
 
 ## changelog
+* 1.0.0
+    - 重新发布到MavenCentral
+    
 * 1.0.0
 
     - 新增BindingViewHolder
